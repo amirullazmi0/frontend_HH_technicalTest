@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --white: #F7F8FB;
+    --Red: #F15858;
+    --Blue: #2775EC;
+    --LightBlue: #F0F6FF;
+}
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/Nunito.ttf') format('woff2');
+}
+
+body {
+    font-family: 'Nunito';
+    background-color: var(--white);
+}
+
+.bg-primary {
+    background-color: var(--white);
+}
+.bg-red {
+    background-color: var(--Red);
+}
+
+.bg-blue {
+    background-color: var(--Blue);
+}
+
+.bg-lightblue{
+    background-color: var(--LightBlue);
+}
+
+.text-red {
+    color: var(--Red);
+}
+
+.text-blue {
+    color: var(--Blue);
+}
+
+.text-lightblue{
+    color: var(--LightBlue);
+}
+.border-red {
+    border-color: var(--Red);
+}
+
+.border-blue {
+    border-color: var(--Blue);
+}
+
+.border-lightblue {
+    border-color: var(--LightBlue);
+}

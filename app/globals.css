@@ -1,33 +1,60 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --white: #F7F8FB;
+  --Red: #F15858;
+  --Blue: #2775EC;
+  --LightBlue: #F0F6FF;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+  font-family: "Nunito";
+  src: url("/Nunito.ttf") format("woff2");
 }
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Nunito";
+  background-color: var(--white);
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.bg-primary {
+  background-color: var(--white);
 }
+
+.bg-red {
+  background-color: var(--Red);
+}
+
+.bg-blue {
+  background-color: var(--Blue);
+}
+
+.bg-lightblue {
+  background-color: var(--LightBlue);
+}
+
+.text-red {
+  color: var(--Red);
+}
+
+.text-blue {
+  color: var(--Blue);
+}
+
+.text-lightblue {
+  color: var(--LightBlue);
+}
+
+.border-red {
+  border-color: var(--Red);
+}
+
+.border-blue {
+  border-color: var(--Blue);
+}
+
+.border-lightblue {
+  border-color: var(--LightBlue);
+}
+
+/*# sourceMappingURL=globals.css.map */
