@@ -6,7 +6,7 @@ import success from "../../public/success.gif";
 import axios from 'axios';
 const AlertDelete = () => {
     const kegiatanContext: any = useContext(KegiatanContext)
-    const API_URL = 'http://localhost:5555'
+    const API_URL = process.env.API_URL
 
     const handleDeleteKegiatan = async () => {
         try {

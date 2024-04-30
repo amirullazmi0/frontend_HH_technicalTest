@@ -8,7 +8,7 @@ const FormTambahProyek = () => {
 
     const [name, setName] = useState<string>('')
 
-    const API_URL = 'http://localhost:5555'
+    const API_URL = process.env.API_URL
 
     const handleCreateProyek = async () => {
         try {

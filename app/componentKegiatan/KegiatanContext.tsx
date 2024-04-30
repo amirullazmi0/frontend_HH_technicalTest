@@ -1,6 +1,7 @@
 'use client'
 import React, { createContext, useState } from "react";
 import { kegiatanResponse } from "../model/kegiatan.model";
+import ModalFilter from "./ModalFilter";
 
 export const KegiatanContext = createContext({})
 
@@ -17,6 +18,7 @@ export default function KegiatanProvider({ children }: { children: React.ReactNo
     const [editSelect, setEditSelect] = useState<kegiatanResponse>()
     const [alertEditKegiatan, setAlertEditKegiatan] = useState<kegiatanResponse>()
 
+    const [modalFilter, setModalFilter] = useState<boolean>(false)
 
     return (
         <KegiatanContext.Provider
@@ -29,7 +31,8 @@ export default function KegiatanProvider({ children }: { children: React.ReactNo
                 deleteSelect, setDeleteSelect,
                 alertDelete, setAlertDelete,
                 editSelect, setEditSelect,
-                alertEditKegiatan, setAlertEditKegiatan
+                alertEditKegiatan, setAlertEditKegiatan,
+                modalFilter, setModalFilter
             }}
         >
             {children}
