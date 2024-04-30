@@ -3,6 +3,11 @@ import React, { useContext, useState } from 'react'
 import TableKegiatan from './TableKegiatan'
 import ModalTambah from './ModalTambah'
 import { KegiatanContext } from './KegiatanContext'
+import AlertKegiatan from './AlertKegiatan'
+import AlertProyek from './AlertProyek'
+import AlertDelete from './AlertDelete'
+import ModalEdit from './ModalEdit'
+import ModalTambahProyel from './ModalTambahProyel'
 
 const Section = () => {
     const [modalTambah, setModalTambah] = useState<boolean>(false)
@@ -10,17 +15,42 @@ const Section = () => {
 
     const renderModalTambahKegiatan = () => {
         if (kegiatanContext.modalTambahKegiatan == true) {
-            window.document.body.style.overflow = 'hidden'
+            // document.body.style.overflow = 'hidden'
             return <ModalTambah />
         } else {
-            window.document.body.style.overflow = 'auto'
+            // document.body.style.overflow = 'auto'
+            return null
+        }
+    }
+
+    const renderModalEditKegiatan = () => {
+        if (kegiatanContext.editSelect) {
+            // document.body.style.overflow = 'hidden'
+            return <ModalEdit />
+        } else {
+            // document.body.style.overflow = 'auto'
+            return null
+        }
+    }
+
+    const renderModalTambahProyek = () => {
+        if (kegiatanContext.modalTambahProyek) {
+            // document.body.style.overflow = 'hidden'
+            return <ModalTambahProyel />
+        } else {
+            // document.body.style.overflow = 'auto'
             return null
         }
     }
 
     return (
         <div className='p-5'>
+            <AlertKegiatan />
+            <AlertProyek />
+            <AlertDelete />
             {renderModalTambahKegiatan()}
+            {renderModalEditKegiatan()}
+            {renderModalTambahProyek()}
             <div className="bg-white rounded-lg shadow">
                 <div className="flex justify-between items-center p-5 border-b-[1px]">
                     <div className="flex items-center gap-3">

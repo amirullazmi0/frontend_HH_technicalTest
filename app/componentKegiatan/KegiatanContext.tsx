@@ -1,5 +1,6 @@
 'use client'
 import React, { createContext, useState } from "react";
+import { kegiatanResponse } from "../model/kegiatan.model";
 
 export const KegiatanContext = createContext({})
 
@@ -7,12 +8,28 @@ export default function KegiatanProvider({ children }: { children: React.ReactNo
     const [modalTambahKegiatan, setModalTambahKegiatan] = useState<boolean>(false)
     const [modalTambahProyek, setModalTambahProyek] = useState<boolean>(false)
     const [dropdownProyek, setDropdownProyek] = useState<boolean>(false)
+    const [alertKegiatan, setAlertKegiatan] = useState<boolean>(false)
+    const [alertProyek, setAlertProyek] = useState<boolean>(false)
+
+    const [deleteSelect, setDeleteSelect] = useState<kegiatanResponse>()
+    const [alertDelete, setAlertDelete] = useState<kegiatanResponse>()
+
+    const [editSelect, setEditSelect] = useState<kegiatanResponse>()
+    const [alertEditKegiatan, setAlertEditKegiatan] = useState<kegiatanResponse>()
+
+
     return (
         <KegiatanContext.Provider
             value={{
                 modalTambahKegiatan, setModalTambahKegiatan,
                 modalTambahProyek, setModalTambahProyek,
-                dropdownProyek, setDropdownProyek
+                dropdownProyek, setDropdownProyek,
+                alertKegiatan, setAlertKegiatan,
+                alertProyek, setAlertProyek,
+                deleteSelect, setDeleteSelect,
+                alertDelete, setAlertDelete,
+                editSelect, setEditSelect,
+                alertEditKegiatan, setAlertEditKegiatan
             }}
         >
             {children}
